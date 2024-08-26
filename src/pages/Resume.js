@@ -14,6 +14,8 @@ import degrees from '../data/resume/degrees';
 import work from '../data/resume/work';
 import { skills, categories } from '../data/resume/skills';
 
+const { PUBLIC_URL } = process.env; // set automatically from package.json:homepage
+
 // NOTE: sections are displayed in order defined.
 const sections = {
   Education: () => <Education data={degrees} />,
@@ -32,7 +34,7 @@ const Resume = () => (
       <header>
         <div className="title">
           <h2>
-            <Link to="resume">Resume</Link>
+            <Link to={`${PUBLIC_URL}/resume.pdf`}>Resume</Link>
           </h2>
           <div className="link-container">
             {Object.keys(sections).map((sec) => (
